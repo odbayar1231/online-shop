@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+</head>
+<body>
+<section id="topCategories" class="border-gray" th:fragment="section">
+    <h4>Categories</h4>
+    <div class="cat-list">
+        <ul>
+            <li><a class="noborder" th:href="@{/product}">Show All</a></li>
+            <li th:each="category : ${categories}">
+                <a th:text="${category.name}" th:href="@{/product(category=${category.id})}"></a>
+            </li>
+        </ul>
+    </div>
+</section>
+</body>
+</html>
